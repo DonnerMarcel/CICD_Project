@@ -27,8 +27,8 @@ jobs:
 
       - name: Run tests and generate coverage report
         run: |
-          coverage run -m pytest
-          coverage xml  # Generates coverage.xml in project root
+          coverage run --rcfile=.coveragerc -m pytest
+          coverage xml
 
       - name: Upload coverage to Codacy
         uses: codacy/codacy-coverage-reporter-action@v1
