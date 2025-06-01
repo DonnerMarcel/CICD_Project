@@ -25,16 +25,23 @@ jobs:
           pip install -r requirements.txt
           pip install coverage pytest
 
-      - name: Run tests and generate coverage report
+      - name: Run tests and generate coverage reportAdd commentMore actions
         run: |
-          coverage run --rcfile=.coveragerc -m pytest
-          coverage xml -o cobertura.xml
-      
+          coverage run --source=budget_tracker -m pytest
+          coverage xml
+
       - name: Upload coverage to Codacy
         uses: codacy/codacy-coverage-reporter-action@v1
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-          coverage-reports: cobertura.xml
+          coverage-reports: coverage.xml
+      
+      - name: Finalize Codacy coverage upload
+        uses: codacy/codacy-coverage-reporter-action@v1
+        with:
+          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
+          coverage-reports: coverage.xml
+          final: true
 
       - name: Run Codacy Analysis CLI
         uses: codacy/codacy-analysis-cli-action@v4.4.0
