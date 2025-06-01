@@ -9,12 +9,15 @@ engines:
     enabled: true      # Analyzes code complexity (Cyclomatic Complexity, LOC, etc.)
   mypy:
     enabled: true      # Static type checker for Python
+  duplication:
+    enabled: true
+    threshold: 10
 
 tools:
   pylint:
     configuration:
-      config: .pylintrc # Optional: path to config file (or remove if not using)
+      config: .pylintrc
 
   flake8:
     configuration:
-      config: .flake8   # Optional: path to config file (or remove if not using)
+      config: .flake8
