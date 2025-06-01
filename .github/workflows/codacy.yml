@@ -27,7 +27,7 @@ jobs:
 
       - name: Run tests and generate coverage report
         run: |
-          coverage run --rcfile=.coveragerc -m pytest
+          coverage run --source=budget_tracker -m pytest
           coverage xml
 
       - name: Upload coverage to Codacy
