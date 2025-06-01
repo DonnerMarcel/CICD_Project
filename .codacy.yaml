@@ -11,7 +11,7 @@ engines:
     enabled: true      # Static type checker for Python
   duplication:
     enabled: true
-    minimumTokens: 20
+    minimumTokens: 5
     threshold: 10
 
 tools:
