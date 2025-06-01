@@ -27,21 +27,14 @@ jobs:
 
       - name: Run tests and generate coverage report
         run: |
-          coverage run --source=budget_tracker -m pytest
-          coverage xml
-
+          coverage run --rcfile=.coveragerc -m pytest
+          coverage xml -o cobertura.xml
+      
       - name: Upload coverage to Codacy
         uses: codacy/codacy-coverage-reporter-action@v1
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-          coverage-reports: coverage.xml
-      
-      - name: Finalize Codacy coverage upload
-        uses: codacy/codacy-coverage-reporter-action@v1
-        with:
-          project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
-          coverage-reports: coverage.xml
-          final: true
+          coverage-reports: cobertura.xml
 
       - name: Run Codacy Analysis CLI
         uses: codacy/codacy-analysis-cli-action@v4.4.0
