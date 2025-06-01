@@ -2,3 +2,4 @@
 ![Codacy Workflow](https://github.com/DonnerMarcel/CICD_Project/actions/workflows/codacy.yml/badge.svg)
 
 A simple project, created for showcasing Codacy as a quality gate in the CICD pipeline.
+
