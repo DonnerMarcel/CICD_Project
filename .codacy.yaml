@@ -1,0 +1,20 @@
+engines:
+  pylint:
+    enabled: true      # Detects style violations, code smells, etc.
+  flake8:
+    enabled: true      # Lightweight style and formatting linter
+  bandit:
+    enabled: true      # Security scanner for Python
+  radon:
+    enabled: true      # Analyzes code complexity (Cyclomatic Complexity, LOC, etc.)
+  mypy:
+    enabled: true      # Static type checker for Python
+
+tools:
+  pylint:
+    configuration:
+      config: .pylintrc # Optional: path to config file (or remove if not using)
+
+  flake8:
+    configuration:
+      config: .flake8   # Optional: path to config file (or remove if not using)
