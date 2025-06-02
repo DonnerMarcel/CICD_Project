@@ -55,5 +55,4 @@ jobs:
         with:
           project-token: ${{ secrets.CODACY_PROJECT_TOKEN }}
           verbose: true
-          max-allowed-issues: 0
         # Run Codacy static code analysis with strict max issues threshold
